@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cakey Menu</title>
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/menu.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="nav">
+        <a href="index.html">Cakey</a>
+        <span class="show-cart">
+          <i class="fas fa-cart-plus"></i>
+          <div class="cart-items"></div>
+        </span>
+      </div>
+
+      <div class="content">
+        <h3>Menu</h3>
+      </div>
+      <div class="gallery"></div>
+    </div>
+    <!-- Cart -->
+    <div class="cart-overlay">
+      <div class="cart">
+        <div class="cart-header">
+          <div class="cart-close"></div>
+          <button class="clear-cart">Clear Cart</button>
+        </div>
+        <!-- <div class="cart-items"></div> -->
+        <div class="cart-content"></div>
+
+        <div class="cart-footer">
+          <h3>
+            Your Total: <br />
+
+            MT <span class="cart-total">0</span>
+          </h3>
+          <button type="submit">Order</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/contentful@5.0.1/dist/contentful.browser.min.js"></script>
+    <script src="js/cart.js"></script>
+  </body>
+</html>

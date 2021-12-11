@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cakey</title>
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <a href="#home" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+    <nav class="navbar" id="navbarSection">
+      <a href="#home" class="navbar-logo">Cakey</a>
+      <div class="navbar-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+
+      <ul class="navbar-menu">
+        <li class="navbar-menu__item">
+          <a href="#home" class="navbar-menu__item-link">Home</a>
+        </li>
+        <li class="navbar-menu__item">
+          <a href="menu.html" class="navbar-menu__item-link">Menu</a>
+        </li>
+        <li class="navbar-menu__item">
+          <a href="#about" class="navbar-menu__item-link">About Us</a>
+        </li>
+        <li class="navbar-menu__item">
+          <a href="#contact" class="navbar-menu__item-link">Contact</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="container" id="home">
+      <div class="landing-text">
+        <h1 class="landing-text__heading">A taste of heaven in every bite</h1>
+        <a href="menu.html" class="scroll-down"
+          >See our menu! <i class="fas fa-book-open"></i
+        ></a>
+      </div>
+
+      <div class="landing-card">
+        <div class="landing-card_heading">
+          <h2>Cakey!</h2>
+        </div>
+        <div class="landing-card_body">
+          <p>
+            We are Cakey! <br />
+            A bakery and desert store. <br />
+            We offer deliveries and custom cakes upon request <br />
+          </p>
+          <a href="#about">See more <i class="fas fa-arrow-down"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <section class="about" id="about">
+      <div class="about-header">
+        <h2>About Us!</h2>
+      </div>
+      <div class="about-main">
+        <div class="about-card">
+          <div class="about-card__header">
+            <h2>Based in Mozambique!</h2>
+          </div>
+          <div class="about-card__body">
+            <p>We do deliveries to all the neighbouring towns of Maputo City</p>
+            <img src="./images/undraw_travel_plans_li01.svg" alt="" />
+          </div>
+        </div>
+        <div class="about-card">
+          <div class="about-card__header">
+            <h2>Tailored to your taste</h2>
+          </div>
+          <div class="about-card__body">
+            <p>
+              Need specific recipe?
+              <a href="#contact" id="to_contact">Contact us</a> to request a
+              custom treat
+            </p>
+            <img src="./images/undraw_order_confirmed_re_g0if.svg" alt="" />
+          </div>
+        </div>
+        <div class="about-card">
+          <div class="about-card__header">
+            <h2>Lorem ipsum dolor</h2>
+          </div>
+          <div class="about-card__body">
+            <p>Lorem ipsum dolor sit amet consectetur.</p>
+            <img src="./images/undraw_in_no_time_-6-igu.svg" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="footer">
+        <div class="footer-wrapper">
+          <div class="mail-group">
+            <form class="form">
+              <div class="form-header">
+                <h1>Mail us now below!</h1>
+              </div>
+              <div class="form-controls">
+                <input
+                  type="text"
+                  name="email"
+                  id="email"
+                  placeholder="Enter your email..."
+                />
+                <input
+                  type="password"
+                  name="password"
+                  id="pass"
+                  placeholder="Enter password..."
+                />
+
+                <textarea
+                  name="messageField"
+                  id="messageField"
+                  cols="24"
+                  rows="12"
+                  placeholder="Enter message"
+                ></textarea>
+                <input type="submit" value="Send" id="send-btn" />
+              </div>
+            </form>
+            <div class="extra-content">
+              <h2>Lorem, ipsum dolor.</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab odit
+                nihil libero, a excepturi deserunt perferendis quod similique et
+                iusto.
+              </p>
+              <img src="./images/undraw_terms_re_6ak4.svg" alt="" />
+            </div>
+          </div>
+          <div class="footer-container">
+            <div class="footer-links">
+              <span id="logo">Cakey</span>
+              <ul class="footer-links__menu">
+                <li class="footer-links__menu-item">
+                  <a href="#home">Home</a>
+                </li>
+                <li class="footer-links__menu-item">
+                  <a href="menu.html">Menu</a>
+                </li>
+                <li class="footer-links__menu-item">
+                  <a href="#about">About Us</a>
+                </li>
+              </ul>
+              <ul class="footer-links__contact">
+                <li>+258 848903336</li>
+                <li>cakey@gmail.com</li>
+                <li>Maputo, Mozambique</li>
+              </ul>
+              <div class="footer-links__social">
+                <h4>Follow our social media platforms!</h4>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
