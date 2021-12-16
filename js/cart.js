@@ -1,29 +1,29 @@
-const cartBtn = document.querySelector(".show-cart");
-const gallery = document.querySelector(".gallery");
-const closeCartBtn = document.querySelector(".cart-close");
-const overlay = document.querySelector(".cart-overlay");
-const cartSideBar = document.querySelector(".cart");
-const clearCartBtn = document.querySelector(".clear-cart");
-const cartTotal = document.querySelector(".cart-total");
-const cartItems = document.querySelector(".cart-items");
-const cartContent = document.querySelector(".cart-content");
+const cartBtn = document.querySelector('.show-cart');
+const gallery = document.querySelector('.gallery');
+const closeCartBtn = document.querySelector('.cart-close');
+const overlay = document.querySelector('.cart-overlay');
+const cartSideBar = document.querySelector('.cart');
+const clearCartBtn = document.querySelector('.clear-cart');
+const cartTotal = document.querySelector('.cart-total');
+const cartItems = document.querySelector('.cart-items');
+const cartContent = document.querySelector('.cart-content');
 
-window.addEventListener("scroll", () => {
-  const nav = document.querySelector(".nav");
-  const content = document.querySelector(".content");
+window.addEventListener('scroll', () => {
+  const nav = document.querySelector('.nav');
+  const content = document.querySelector('.content');
 
   if (window.scrollY > nav.offsetTop + nav.offsetHeight) {
-    nav.classList.add("sticky");
+    nav.classList.add('sticky');
   } else {
-    nav.classList.remove("sticky");
+    nav.classList.remove('sticky');
   }
 });
 
 const client = contentful.createClient({
   // This is the space ID. A space is like a project folder in Contentful terms
-  space: "zoqrycqrv59z",
+  space: 'zoqrycqrv59z',
   // This is the access token for this space. Normally you get both ID and the token in the Contentful web app
-  accessToken: "qtkamYoCo1glHu6ig4mq_Q3yk1wqovpXvRwI4EZ7efI",
+  accessToken: 'qtkamYoCo1glHu6ig4mq_Q3yk1wqovpXvRwI4EZ7efI',
 });
 
 // Cart Items
@@ -35,7 +35,7 @@ class Products {
   async getProducts() {
     try {
       const content = await client.getEntries({
-        content_type: "cakeyCakeStoreWebsite",
+        content_type: 'cakeyCakeStoreWebsite',
       });
 
       let products = content.items;
@@ -55,7 +55,7 @@ class Products {
 
 class UI {
   displayProducts(products) {
-    let result = "";
+    let result = '';
     products.forEach((prod) => {
       result += `
         <div class="gallery-pic">
@@ -76,7 +76,7 @@ class UI {
   // When Order buttons are clicked send the data to the shopping cart
   getOrderButtons() {
     // Collect all buttons and convert into an array
-    let btns = [...document.querySelectorAll(".checkout")];
+    let btns = [...document.querySelectorAll('.checkout')];
     buttonsDom = btns;
 
     buttonsDom.forEach((btn) => {
@@ -86,12 +86,12 @@ class UI {
       let inCart = cart.find((item) => item.id === id);
 
       if (inCart) {
-        btn.innerText = "In Cart";
+        btn.innerText = 'In Cart';
         btn.disabled = true;
       }
 
-      btn.addEventListener("click", (e) => {
-        e.target.innerText = "In Cart";
+      btn.addEventListener('click', (e) => {
+        e.target.innerText = 'In Cart';
         e.target.disabled = true;
 
         // get the product from storage containing the targeted id and set the quantity to 1
@@ -119,13 +119,13 @@ class UI {
     cart = Storage.getCart();
     this.setCartValues(cart);
     this.populateCart(cart);
-    cartBtn.addEventListener("click", this.showCart);
-    closeCartBtn.addEventListener("click", this.hideCart);
+    cartBtn.addEventListener('click', this.showCart);
+    closeCartBtn.addEventListener('click', this.hideCart);
   }
 
   addCartItem(item) {
-    const div = document.createElement("div");
-    div.classList.add("cart-item");
+    const div = document.createElement('div');
+    div.classList.add('cart-item');
     div.innerHTML = `
       <img
         src=${item.image}
@@ -139,7 +139,7 @@ class UI {
       <i class="fas fa-chevron-up" data-id=${item.id}></i>
       <p class="item-amount">${item.amount}</p>
       <i class="fas fa-chevron-down" data-id=${item.id}></i>
-      <a href="#" class="remove-item" data-id=${item.id}>Remove</a>
+      <a href="#" class="remove-item" data-id=${item.id}><i class="fas fa-trash"></i></a>
     </div>
     `;
 
@@ -147,18 +147,18 @@ class UI {
   }
 
   cartLogic() {
-    clearCartBtn.addEventListener("click", () => {
+    clearCartBtn.addEventListener('click', () => {
       this.clearCart();
     });
 
     // cart functionality
-    cartContent.addEventListener("click", (event) => {
-      if (event.target.classList.contains("remove-item")) {
+    cartContent.addEventListener('click', (event) => {
+      if (event.target.classList.contains('remove-item')) {
         let removeItem = event.target;
         let id = removeItem.dataset.id;
         cartContent.removeChild(removeItem.parentElement.parentElement);
         this.removeItem(id);
-      } else if (event.target.classList.contains("fa-chevron-up")) {
+      } else if (event.target.classList.contains('fa-chevron-up')) {
         let addAmount = event.target;
         let id = addAmount.dataset.id;
         let tempItem = cart.find((item) => item.id === id);
@@ -166,7 +166,7 @@ class UI {
         Storage.saveCart(cart);
         this.setCartValues(cart);
         addAmount.nextElementSibling.innerText = tempItem.amount;
-      } else if (event.target.classList.contains("fa-chevron-down")) {
+      } else if (event.target.classList.contains('fa-chevron-down')) {
         let lowerAmount = event.target;
         let id = lowerAmount.dataset.id;
         let tempItem = cart.find((item) => item.id === id);
@@ -231,39 +231,39 @@ class UI {
   }
 
   hideCart() {
-    overlay.classList.remove("show");
-    cartSideBar.classList.remove("visible-cart");
+    overlay.classList.remove('show');
+    cartSideBar.classList.remove('visible-cart');
   }
 
   showCart() {
-    overlay.classList.add("show");
-    cartSideBar.classList.add("visible-cart");
+    overlay.classList.add('show');
+    cartSideBar.classList.add('visible-cart');
   }
 }
 
 class Storage {
   static saveProducts(products) {
-    localStorage.setItem("products", JSON.stringify(products));
+    localStorage.setItem('products', JSON.stringify(products));
   }
 
   static getProduct(id) {
-    let products = JSON.parse(localStorage.getItem("products"));
+    let products = JSON.parse(localStorage.getItem('products'));
     return products.find((product) => product.id === id);
   }
 
   static saveCart(cart) {
-    localStorage.setItem("cart", JSON.stringify(cart));
+    localStorage.setItem('cart', JSON.stringify(cart));
     // console.log(localStorage.getItem("cart"));
   }
 
   static getCart() {
-    return localStorage.getItem("cart")
-      ? JSON.parse(localStorage.getItem("cart"))
+    return localStorage.getItem('cart')
+      ? JSON.parse(localStorage.getItem('cart'))
       : [];
   }
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', () => {
   const ui = new UI();
   const products = new Products();
 

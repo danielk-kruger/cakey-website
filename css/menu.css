@@ -547,14 +547,14 @@ body {
 }
 @media only screen and (max-width: 520px) {
   .cart-overlay .cart-item div {
-    margin: auto 1.2rem 1.5rem 2rem;
+    margin: auto 1.2rem 1rem 2rem;
   }
 }
 @media only screen and (max-width: 380px) {
   .cart-overlay .cart-item div {
     justify-self: center;
     padding-bottom: 1.125rem;
-    margin: 0;
+    margin: auto 1rem;
   }
 }
 @media only screen and (max-width: 520px) {
@@ -655,7 +655,7 @@ body {
     font-size: 1.625rem;
   }
 }
-@media only screen and (max-width: 380px) {
+@media only screen and (max-width: 520px) {
   .cart-overlay .cart-item div a.remove-item {
     margin-top: 0.825rem;
     display: block;
