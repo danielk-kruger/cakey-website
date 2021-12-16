@@ -526,6 +526,10 @@ body {
           @include md-screen {
             padding-bottom: 0;
           }
+
+          @include sm-screen {
+            padding-bottom: 1.2rem;
+          }
         }
 
         .fa-chevron-up,
@@ -565,12 +569,8 @@ body {
           font-size: 0.8rem;
           color: $black;
           transition: all 0.3s ease;
-          // background: green;
-
-          // z-index: 4;
 
           i {
-            // z-index: -1;
             padding: 0.25rem;
           }
 
