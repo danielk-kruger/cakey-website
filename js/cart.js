@@ -139,7 +139,7 @@ class UI {
       <i class="fas fa-chevron-up" data-id=${item.id}></i>
       <p class="item-amount">${item.amount}</p>
       <i class="fas fa-chevron-down" data-id=${item.id}></i>
-      <a href="#" class="remove-item" data-id=${item.id}><i class="fas fa-trash"></i></a>
+      <a href="#" class="remove-item" data-id=${item.id}><i class="fas fa-trash remove"></i></a>
     </div>
     `;
 
@@ -153,10 +153,12 @@ class UI {
 
     // cart functionality
     cartContent.addEventListener('click', (event) => {
-      if (event.target.classList.contains('remove-item')) {
+      if (event.target.classList.contains('remove')) {
         let removeItem = event.target;
-        let id = removeItem.dataset.id;
-        cartContent.removeChild(removeItem.parentElement.parentElement);
+        let id = removeItem.parentElement.dataset.id;
+        cartContent.removeChild(
+          removeItem.parentElement.parentElement.parentElement
+        );
         this.removeItem(id);
       } else if (event.target.classList.contains('fa-chevron-up')) {
         let addAmount = event.target;
