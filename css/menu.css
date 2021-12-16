@@ -473,7 +473,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #ecb0ab7a;
+  background-color: #f5efef;
   width: 90%;
   margin: 0 auto;
   margin-top: 1.5rem;
@@ -649,6 +649,8 @@ body {
   font-size: 0.8rem;
   color: #1d201f;
   transition: all 0.3s ease;
+  padding: 0.25rem;
+  z-index: 4;
 }
 @media only screen and (max-width: 920px) {
   .cart-overlay .cart-item div a.remove-item {
@@ -664,7 +666,7 @@ body {
 .cart-overlay .cart-item div .fa-chevron-up:hover,
 .cart-overlay .cart-item div .fa-chevron-down:hover,
 .cart-overlay .cart-item div .remove-item:hover {
-  color: #df928e;
+  color: #f77062;
   cursor: pointer;
   transform: scale(1.075);
 }
